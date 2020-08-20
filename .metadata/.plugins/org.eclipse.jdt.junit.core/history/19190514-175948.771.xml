@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="cucumber.runtime.formatter.JUnitFormatter" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="cucumber.runtime.formatter.JUnitFormatter" time="17.078">
+    <testcase name="Login to Application" classname="Login to the Application" time="17.078"/>
+  </testsuite>
+</testrun>

@@ -1,0 +1,13 @@
+Feature: Login to the Application
+
+  Scenario: Login to Application            [90m# src/main/java/Feature/login.feature:3[0m
+    [32mGiven [0m[32mAccess the url link[0m               [90m# LoginStep.User_Enters_Application_Url()[0m
+    [32mWhen [0m[32mUser enters the login details[0m      [90m# LoginStep.User_enters_login_details()[0m
+    [32mThen [0m[32mUser will be able to see Home Page[0m [90m# LoginStep.User_In_Home_Page()[0m
+    [32mThen [0m[32mAccess menu test data[0m              [90m# LoginStep.Access_menu_test_data()[0m
+    [32mThen [0m[32mLogout from the application[0m        [90m# LoginStep.Logout_from_the_application()[0m
+
+  Scenario: Invalid Login to Application            [90m# src/main/java/Feature/login.feature:11[0m
+    [32mGiven [0m[32mAccess the url link[0m                       [90m# LoginStep.User_Enters_Application_Url()[0m
+    [32mWhen [0m[32mUser enters the wrong login details[0m        [90m# LoginStep.User_enters_wrong_login_details()[0m
+    [32mThen [0m[32mUser will be redirected back to login page[0m [90m# LoginStep.User_In_login_Page()[0m

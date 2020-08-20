@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="testrunner" project="CucumberBDDFramework" tests="3" started="3" failures="0" errors="0" ignored="0">
+  <testsuite name="Runner.testrunner" time="5.44">
+    <testsuite name="Feature: Login to the Application" time="5.44">
+      <testsuite name="Scenario: Login to Application" time="5.44">
+        <testcase name="Given Access the url link" classname="Scenario: Login to Application" time="2.433"/>
+        <testcase name="When User enters the login details" classname="Scenario: Login to Application" time="2.955"/>
+        <testcase name="Then User will be able to see Home Page" classname="Scenario: Login to Application" time="0.052"/>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testrun>

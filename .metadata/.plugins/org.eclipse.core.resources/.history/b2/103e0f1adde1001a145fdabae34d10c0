@@ -1,0 +1,58 @@
+package stepDefinitions;
+
+
+import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Capabilities;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+
+
+public class LoginStep {
+	WebDriver driver;
+	
+	@Given("^Access the url link$")
+	public void User_Enters_Application_Url() {
+		String path = System.getProperty("user.dir");
+		System.out.println(path);
+		 
+			 System.setProperty("webdriver.gecko.driver",path+"/geckodriver.exe");
+		 
+		 //driver=new ChromeDriver();
+		 driver = new FirefoxDriver();
+		 Capabilities caps = ((RemoteWebDriver) driver).getCapabilities();
+		 String browserName = caps.getBrowserName();
+		 String browserVersion = caps.getVersion();
+		 System.out.println(browserName+" "+browserVersion);
+		 driver.manage().window().maximize();
+		 driver.get("https://localhost/itqapoc/home");
+		 
+		
+		 
+	}
+	
+	@When("^User enters the login details$")
+	public void User_enters_login_details() throws InterruptedException
+	{
+		driver.findElement(By.id("username")).sendKeys("administrator");
+		 driver.findElement(By.id("password")).sendKeys("password");
+		 driver.findElement(By.name("submit")).click();
+	}
+	
+	@Then("^User will be able to see Home Page$")
+	public void User_In_Home_Page()
+	{
+		 String dashboard= driver.findElement(By.xpath("//h6[contains(text(),'Dashboard')]")).getText();
+		 Assert.assertEquals("Dashboard",dashboard);
+		driver.close();
+	}
+	
+
+}

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="testrunner" project="CucumberBDDFramework" tests="3" started="3" failures="0" errors="2" ignored="1">
+  <testsuite name="Runner.testrunner" time="0.337">
+    <testsuite name="Feature: Login to the Application" time="0.337">
+      <testsuite name="Scenario: Login to Application" time="0.221" incomplete="true">
+        <error>org.openqa.selenium.ElementClickInterceptedException: Element &lt;input class="btn btn-success float-right" name="submit" type="submit"&gt; is not clickable at point (824,489) because another element &lt;div class="preloader"&gt; obscures it
+Build info: version: '3.9.1', revision: '63f7b50', time: '2018-02-07T22:25:02.294Z'
+System info: host: 'WIN-TD9GQH8C661', ip: '172.31.22.231', os.name: 'Windows Server 2012 R2', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_261'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 79.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20200720193547, moz:geckodriverVersion: 0.27.0, moz:headless: false, moz:processID: 8016, moz:profile: C:\Users\Administrator\AppD..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 6.3, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: f12e2059-978b-41c3-aa08-71104c7e72a6&#13;
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)&#13;
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)&#13;
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)&#13;
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)&#13;
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)&#13;
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)&#13;
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)&#13;
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:160)&#13;
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)&#13;
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)&#13;
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:279)&#13;
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:83)&#13;
+	at stepDefinitions.LoginStep.User_enters_login_details(LoginStep.java:46)&#13;
+	at ✽.When User enters the login details(src/main/java/Feature/login.feature:6)&#13;
+&#13;
+</error>
+        <testcase name="Given Access the url link" classname="Scenario: Login to Application" time="0.215"/>
+        <testcase name="When User enters the login details" classname="Scenario: Login to Application" time="0.006">
+          <error>org.openqa.selenium.ElementClickInterceptedException: Element &lt;input class="btn btn-success float-right" name="submit" type="submit"&gt; is not clickable at point (824,489) because another element &lt;div class="preloader"&gt; obscures it
+Build info: version: '3.9.1', revision: '63f7b50', time: '2018-02-07T22:25:02.294Z'
+System info: host: 'WIN-TD9GQH8C661', ip: '172.31.22.231', os.name: 'Windows Server 2012 R2', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_261'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 79.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20200720193547, moz:geckodriverVersion: 0.27.0, moz:headless: false, moz:processID: 8016, moz:profile: C:\Users\Administrator\AppD..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 6.3, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: f12e2059-978b-41c3-aa08-71104c7e72a6&#13;
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)&#13;
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)&#13;
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)&#13;
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)&#13;
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)&#13;
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)&#13;
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)&#13;
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:160)&#13;
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)&#13;
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)&#13;
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:279)&#13;
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:83)&#13;
+	at stepDefinitions.LoginStep.User_enters_login_details(LoginStep.java:46)&#13;
+	at ✽.When User enters the login details(src/main/java/Feature/login.feature:6)&#13;
+&#13;
+</error>
+        </testcase>
+        <testcase name="Then User will be able to see Home Page" classname="Scenario: Login to Application" time="0.113" ignored="true"/>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testrun>
