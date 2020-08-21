@@ -10,7 +10,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
-
+import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.firefox.internal.ProfilesIni;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -26,10 +27,12 @@ public class LoginStep {
 		System.out.println(path);
 		 
 			 System.setProperty("webdriver.gecko.driver",path+"/geckodriver.exe");
+		ProfilesIni profile = new ProfilesIni();
+			 FirefoxProfile myprofile = profile.getProfile("rust_mozprofile");
 		 DesiredCapabilities cap = DesiredCapabilities.firefox();
-			cap.setCapability("marionette",true);
+		cap.setCapability("marionette",true);
 		 //driver=new ChromeDriver();
-		 driver = new FirefoxDriver(cap);
+		 driver = new FirefoxDriver(myprofile);
 		 Capabilities caps = ((RemoteWebDriver) driver).getCapabilities();
 			
 		 String browserName = caps.getBrowserName();
