@@ -23,7 +23,7 @@ public class LoginStep {
 		String path = System.getProperty("user.dir");
 		System.out.println(path);
 		 
-			 System.setProperty("webdriver.gecko.driver",path+"/geckodriver");
+			 System.setProperty("webdriver.gecko.driver",path+"/geckodriver.exe");
 		 
 		 //driver=new ChromeDriver();
 		 driver = new FirefoxDriver();
