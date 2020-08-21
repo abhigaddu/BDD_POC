@@ -9,6 +9,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -24,10 +26,12 @@ public class LoginStep {
 		System.out.println(path);
 		 
 			 System.setProperty("webdriver.gecko.driver",path+"/geckodriver.exe");
-		 
+		 DesiredCapabilities cap = DesiredCapabilities.firefox();
+			cap.setCapability("marionette",true);
 		 //driver=new ChromeDriver();
-		 driver = new FirefoxDriver();
+		 driver = new FirefoxDriver(cap);
 		 Capabilities caps = ((RemoteWebDriver) driver).getCapabilities();
+			
 		 String browserName = caps.getBrowserName();
 		 String browserVersion = caps.getVersion();
 		 System.out.println(browserName+" "+browserVersion);
