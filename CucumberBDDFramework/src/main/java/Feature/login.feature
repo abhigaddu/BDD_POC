@@ -1,14 +1,17 @@
 Feature: Login to the Application
 
-Scenario: Login to Application
+  Background: 
+    Given Access the url link
 
-Given Access the url link
-When User enters the login details
-Then User will be able to see Home Page
-Then Access menu test data
-Then Logout from the application
+  Scenario: Login to Application
+    When User enters the login details
+    Then User will not get an error message "Username and password did not match or not found"
+    And User will be able to see Home Page
+    When Access menu profile
+    And Logout from the application
+    Then User will be redirected back to login page
 
-Scenario: Invalid Login to Application
-Given Access the url link
-When User enters the wrong login details
-Then User will be redirected back to login page
+  Scenario: Invalid Login to Application
+    When User enters the wrong login details
+    Then User will be redirected back to login page
+    And User will get an error message "Username and password did not match or not found"
