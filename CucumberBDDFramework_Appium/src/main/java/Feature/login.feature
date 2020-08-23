@@ -1,9 +1,9 @@
-Feature: Login to the Application
+Feature: Login to the Mobile Application
 
   Background: 
     Given Access the url link
 
-  Scenario: Login to Application
+  Scenario: Login to Mobile Application
     When User enters the login details
     Then User will not get an error message "Username and password did not match or not found"
     And User will be able to see Home Page
@@ -12,7 +12,7 @@ Feature: Login to the Application
     Then User will be redirected back to login page
     And Close the session
 
-  Scenario: Invalid Login to Application
+  Scenario: Invalid Login to Mobile Application
     When User enters the wrong login details
     Then User will be redirected back to login page
     And User will get an error message "Username and password did not match or not found"
