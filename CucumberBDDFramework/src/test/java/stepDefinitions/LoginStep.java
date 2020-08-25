@@ -1,9 +1,12 @@
 package stepDefinitions;
 
+import java.util.concurrent.TimeUnit;
+
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.firefox.internal.ProfilesIni;
@@ -26,6 +29,7 @@ public class LoginStep {
 		ProfilesIni profile = new ProfilesIni();
 		FirefoxProfile myprofile = profile.getProfile("rust_mozprofile");
 		DesiredCapabilities cap = DesiredCapabilities.firefox();
+		
 		cap.setCapability("marionette", true);
 		// driver=new ChromeDriver();
 		driver = new FirefoxDriver(cap);
@@ -42,6 +46,40 @@ public class LoginStep {
 
 		
 	}
+	
+	@Given("^Wrong Server Address")
+	public void Wrong_Server_Address() {
+		String path = System.getProperty("user.dir");
+		System.out.println(path);
+
+		System.setProperty("webdriver.gecko.driver", path + "/geckodriver.exe");
+		ProfilesIni profile = new ProfilesIni();
+		FirefoxProfile myprofile = profile.getProfile("rust_mozprofile");
+		DesiredCapabilities cap = DesiredCapabilities.firefox();
+		
+		cap.setCapability("marionette", true);
+		// driver=new ChromeDriver();
+		driver = new FirefoxDriver(cap);
+		
+		
+		Capabilities caps = ((RemoteWebDriver) driver).getCapabilities();
+		
+		String browserName = caps.getBrowserName();
+		String browserVersion = caps.getVersion();
+		System.out.println(browserName + " " + browserVersion);
+		driver.manage().window().maximize();
+		try
+		{
+			driver.get("https://171.31.22.231/itqapoc/home");
+		}
+		catch(Exception e)
+		{
+			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		}
+		
+
+		
+	}
 
 	@When("^User enters the login details$")
 	public void User_enters_login_details() throws InterruptedException {
@@ -49,6 +87,11 @@ public class LoginStep {
 		driver.findElement(By.id("password")).sendKeys("password");
 		Thread.sleep(2000);
 		driver.findElement(By.name("submit")).click();
+	}
+	
+	@When("^Page redirects$")
+	public void Page_redirects() throws InterruptedException {
+		Thread.sleep(5000);
 	}
 
 	@When("^User enters the wrong login details$")
@@ -75,6 +118,25 @@ public class LoginStep {
 		Assert.assertEquals("Dashboard", dashboard);
 
 	}
+	
+	@Then("^Validate Server address is wrong$")
+	public void Validate_Server_address_is_wrong() throws InterruptedException {
+		Thread.sleep(2000);
+		try
+		{
+		WebElement ele=driver.findElement(By.id("username"));
+		Assert.assertNull(ele);
+		driver.close();
+		}
+		catch(Exception e)
+		{
+			driver.close();
+			
+		}
+		
+
+	}
+	
 
 	@Then("^Access menu test data$")
 	public void Access_menu_test_data() throws InterruptedException {
