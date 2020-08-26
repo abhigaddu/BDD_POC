@@ -14,7 +14,7 @@ When User enters the wrong login details "admin" "pass"
 Then User will be redirected back to login page
 
 Scenario: Invalid Server Address
-Given Wrong Server Address "http://13.229.157.113:8080/home"
+Given Wrong Server Address "http://13.229.157.114:8080/home"
 When Page redirects
 Then Validate Server address is wrong
 
